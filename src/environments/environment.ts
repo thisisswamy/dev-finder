@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  apiEndPoints:{
+    addJobPost:"http://localhost:8080/api/jobs/add-job-post",
+    getAllPost:'http://localhost:8080/api/jobs/',
+    updateJobPost:'http://localhost:8080/api/jobs/job-post/edit/',
+    deleteJobPost:'http://localhost:8080/api/jobs/delete/',
+    searchPost:'http://localhost:8080/api/jobs/role?search=developer'
+  }
 };
 
 /*

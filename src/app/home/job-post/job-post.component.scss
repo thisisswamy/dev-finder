@@ -1,0 +1,83 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+
+    .post-content{
+        width: 40%;
+        margin: 2em;
+        box-shadow: 0 0 10px 0 rgba(0 0 0/10%);
+        border-bottom: 2px solid darkblue;
+        padding: 20px;
+        border-radius: 6px;
+        h2{
+            margin-bottom: 1em;
+            font-weight: 900;
+            border-bottom: 2px solid #1b1b1b;
+        }
+        form{
+            .form-group{
+                display: flex;
+                margin-top: .7em;
+                flex-direction: column;
+                gap: .2em;
+
+                label:after{
+                    content: "*";
+                    color: red;
+                }
+
+                input{
+                    padding: 10px;
+                    border: 1.2px solid #1b1b1b;
+                    border-radius: 3px;
+                    outline: none;
+                    font-size: 1em;
+
+                }
+                input:focus{
+                    border:1.8px solid darkblue
+                }
+                .ng-invalid.ng-touched{
+                    border: 1.6px solid red;
+                    background-color: rgb(255, 211, 211);
+                }
+                .ng-invalid.ng-touched::placeholder{
+                    
+                    color: red;
+                }
+            }
+            .button{
+                margin: 1em 0;
+                display: flex;
+                gap: 1em;
+                button{
+                    font-size: 1.1em;
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #fff;
+                    border: 1.2px solid #e1e1e1;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+                .ok{
+                    background-color: blueviolet;
+                    color: #fff;
+                }
+                .cancel:hover{
+                    background-color: #e1e1e1;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media(max-width:1020px){
+    .wrapper{
+        .post-content{
+            width: 100%;
+            
+        }
+    }
+}

@@ -5,11 +5,11 @@
         </div>
         <i class="bi bi-list" (click)="openMenu()"></i>
         <div class="navigation" [ngClass]="isMenuOpen?'active':'navigation'">
-            <ul>
+            <ul (click)="closeMenuByEvents($event)">
                 <i class="bi bi-x" (click)="openMenu()"></i>
-                <li><a routerLink="#">Home </a></li>
-                <li><a routerLink="#">Post Job </a></li>
-                <li><a routerLink="#">Find Job </a></li>
+                <li><a routerLink="home">Home </a></li>
+                <li><a routerLink="home/add-post">Post Job </a></li>
+                <li><a routerLink="home">Find Job </a></li>
             </ul>
         </div>
     </div>

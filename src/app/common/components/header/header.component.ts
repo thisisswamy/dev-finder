@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -15,12 +15,13 @@ export class HeaderComponent implements OnInit {
   }
   openMenu(){
     this.isMenuOpen = this.isMenuOpen ? false : true;
-    console.log(this.isMenuOpen);
     
-
   }
-  closeMenu(){
-    
+  closeMenuByEvents(event:any){
+    if(event.target.tagName=='A'){ 
+      this.isMenuOpen=false;
+    }
+
   }
 
 }
