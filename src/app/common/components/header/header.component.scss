@@ -1,0 +1,105 @@
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(0 0 0/10%);
+    padding: 10px 0;
+
+    .header-items{
+        width: 1250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 1em;
+        .logo{
+            a{
+                text-decoration: none;
+                font-size: 2em;
+                font-weight: 900;
+                color: darkblue;
+            }
+        }
+        .bi-list{
+            font-size: 2em;
+            display: none;
+        }
+        .navigation{
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                font-size: 1.1em;
+                i{
+                    font-size: 2em;
+                    display: none;
+                }
+                li{
+                    a{
+                        text-decoration: none;
+                        color: #1b1b1b;
+                    }
+                    a:hover{
+                        color: darkblue;
+                    }
+
+                }
+                li:not(last-child){
+                    margin-right: 20px;
+                }
+            }
+        }
+
+
+    }
+}
+
+@media(max-width:1020px){
+    header{
+        .header-items{
+            .bi-list{
+                display: block;
+                cursor: pointer;
+            }
+            .navigation{     
+                position: fixed;
+                top:0;
+                right:0;
+                background-color: #ffff;
+                padding: 50px;
+                box-shadow: 0 0 10px 0 rgba(0 0 0/10%);
+                visibility: hidden;
+                opacity: 0;
+                border-bottom: 2px solid darkblue;
+                
+               
+                border-bottom-left-radius: 6px;
+                transition: .3s ease;
+                ul{
+                    flex-direction: column;
+                    height:200px;
+                    // padding: 10px;
+                    li{
+                        padding-top: 16px;
+
+                    }
+                    .bi-x{
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        cursor: pointer;
+                    }
+                    .bi-menu{
+                        display: block;
+                    }
+                }
+            }
+            .navigation.active{
+                transform: translateY(0);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}

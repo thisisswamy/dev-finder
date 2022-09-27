@@ -1,0 +1,16 @@
+<header>
+    <div class="header-items">
+        <div class="logo">
+            <a href="#">{{title}}</a>
+        </div>
+        <i class="bi bi-list" (click)="openMenu()"></i>
+        <div class="navigation" [ngClass]="isMenuOpen?'active':'navigation'">
+            <ul>
+                <i class="bi bi-x" (click)="openMenu()"></i>
+                <li><a routerLink="#">Home </a></li>
+                <li><a routerLink="#">Post Job </a></li>
+                <li><a routerLink="#">Find Job </a></li>
+            </ul>
+        </div>
+    </div>
+</header>
