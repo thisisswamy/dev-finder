@@ -9,57 +9,10 @@ import { environment } from '../../../environments/environment';
 })
 export class LandingPageComponent implements OnInit {
 
-  jobPostList:any[]=[
-    {
-      role:'Developer',
-      firm:"Tcs",
-      experience:'1+ yrs',
-      skills:[
-        "Java","Python","JS","HTML",
-        
-      ]
-    },
-    {
-      role:'Tester',
-      firm:"CTS",
-      experience:'2+ yrs',
-      skills:[
-        "Java","Python","JS"
-      ]
-    },
-    {
-      role:'DevOps',
-      firm:"Wipro",
-      experience:'1+ yrs',
-      skills:[
-        "Java","Python","JS"
-      ]
-    },
-    {
-      role:'Data Scientist',
-      firm:"Oracle",
-      experience:'1+ yrs',
-      skills:[
-        "Java","Python","JS"
-      ]
-    },
-    {
-      role:'Spring Developer',
-      firm:"NCR",
-      experience:'1+ yrs',
-      skills:[
-        "Java","Python","JS"
-      ]
-    },
-    {
-      role:'Cloud Developer',
-      firm:"AWS",
-      experience:'1+ yrs',
-      skills:[
-        "Java","Python","JS"
-      ]
-    },
-  ]
+  jobPostList: any[] = [];
+  jobsCollection:any=[] 
+  errorMessege!:boolean;
+  
   searchText:string ="";
   constructor(private http:HttpClient) { }
   ngOnInit(): void {
@@ -73,13 +26,20 @@ export class LandingPageComponent implements OnInit {
     return new Promise<any>((resolve,reject)=>{
       this.http.get(environment.apiEndPoints.getAllPost).subscribe((data:any)=>{
         this.jobPostList=data;
+        this.jobsCollection=data
+        console.log(this.jobPostList);
+        this.errorMessege=false;
         resolve(data);
       },
       err=>{
+        this.errorMessege=true;
         console.log(err);
         
       })
     })
+  }
+  search(){
+    this.jobsCollection=this.jobPostList.filter(t=>t.role.toLowerCase().includes(this.searchText.toLowerCase()));
   }
 
 }

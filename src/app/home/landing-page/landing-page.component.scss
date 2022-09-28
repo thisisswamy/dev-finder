@@ -48,6 +48,20 @@
                 font-size: 1.1em;
             }
         }
+        .empty-messege{
+            p{
+                margin: 5em 2em;
+                font-size: 1.6em;
+                text-align: center;
+                color: darkblue;
+                letter-spacing: 2px;
+            }
+            .error{
+                
+                font-size: 1.2em;
+                color: rgb(227, 22, 22);
+            }
+        }
         .job-collection{
             margin: 1em;
             display: grid;

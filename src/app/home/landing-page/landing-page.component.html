@@ -5,19 +5,25 @@
 
     <div class="job-section">
         <div class="search">
-            <input type="text" placeholder="Top Job Openings | Seach Here" [(ngModel)]="searchText">
-            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Top Job Openings | Seach Here" [(ngModel)]="searchText" (input)="search()">
+            <i class="bi bi-search" (click)="search()"></i>
+        </div>
+        <div class="empty-messege">
+            <p *ngIf="jobsCollection.length<1">No posts available please write a post</p>
+            <p class="error" *ngIf="errorMessege">Internal Server Error occurred. Please try after some time</p>
         </div>
         <div class="job-collection" >
-            <div  *ngFor="let obj of jobPostList">
+            <div  *ngFor="let obj of jobsCollection">
+                <!-- <div class="jobs" *ngIf="obj.role.toLowerCase().includes(searchText.toLowerCase())"> -->
                 <div class="jobs" *ngIf="obj.role.toLowerCase().includes(searchText.toLowerCase())">
                     <h3>{{obj.role }}</h3>
-                    <p><small>Firm : </small><span>{{obj.firm.toUpperCase()}}</span></p>
+                    <p><small>Company : </small><span>{{obj.companyName.toUpperCase()}}</span></p>
                     <div class="skills" >
                         <small>Skills :</small>
                         <span *ngFor="let skill of obj.skills"> {{skill}}</span>
                     </div>
-                    <p><small>Experience : </small><span>{{obj.experience}}</span></p>
+                    <p><small>Experience : </small><span>{{obj.experience}} yrs</span></p>
+                    <p><small>Salary : </small><span>{{obj.salary}} LPA</span></p>
                     
                     <button (click)="applyToJob(obj)">Apply</button>
                 </div>

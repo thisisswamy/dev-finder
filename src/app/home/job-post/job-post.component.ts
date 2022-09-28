@@ -30,7 +30,7 @@ export class JobPostComponent implements OnInit {
         salary:this.jobPost.get('salary')?.value,
         experience:this.jobPost.get('experience')?.value,
         skills:this.jobPost.get('skills')?.value.split(","),
-      }
+      }     
       return new Promise<any>((resolve,reject)=>{
         this.http.post(environment.apiEndPoints.addJobPost,body).subscribe(
             data=>{
