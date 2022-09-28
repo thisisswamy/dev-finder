@@ -77,10 +77,16 @@
                         font-weight: bold;
 
                     }
-                    span:after{
-                        content: ",";
-                        padding-right: 8px;
+                    span{
+                        // border: 1px solid #1b1b1b;
+                        font-size: .8em;
+                        border-radius: 3px;
+                        text-align: center;
+                        padding: 2px 10px;
+                        margin-right: .6em;
+                        background-color: #eee;
                     }
+                    
                 }
                 button{
                     padding: 8px 27px;
