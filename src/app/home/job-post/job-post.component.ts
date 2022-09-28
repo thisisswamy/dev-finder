@@ -55,5 +55,10 @@ export class JobPostComponent implements OnInit {
     }
     
   }
+  onCancel(){
+    this.router.navigateByUrl("/").then(()=>{
+      this.router.navigate(['home']);
+    })
+  }
 
 }

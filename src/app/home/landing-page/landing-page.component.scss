@@ -72,6 +72,7 @@
                     }
                 }
                 .skills{
+                    margin: .4em 0;
                     small{
                         margin-right: 5px;
                         font-weight: bold;
@@ -119,7 +120,7 @@
 @media(max-width:720px){
     .wrapper{
         .writeups{
-
+            margin: 2em;
         }
         .job-section{
             .search{
