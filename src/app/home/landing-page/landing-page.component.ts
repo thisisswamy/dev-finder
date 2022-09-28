@@ -12,6 +12,7 @@ export class LandingPageComponent implements OnInit {
   jobPostList: any[] = [];
   jobsCollection:any=[] 
   errorMessege!:boolean;
+  isContentLoaded:boolean=true;
   
   searchText:string ="";
   constructor(private http:HttpClient) { }
@@ -28,10 +29,12 @@ export class LandingPageComponent implements OnInit {
         this.jobPostList=data;
         this.jobsCollection=data
         console.log(this.jobPostList);
+        this.isContentLoaded=false;
         this.errorMessege=false;
         resolve(data);
       },
       err=>{
+        this.isContentLoaded=false;
         this.errorMessege=true;
         console.log(err);
         

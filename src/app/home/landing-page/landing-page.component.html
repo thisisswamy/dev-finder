@@ -8,8 +8,13 @@
             <input type="text" placeholder="Top Job Openings | Seach Here" [(ngModel)]="searchText" (input)="search()">
             <i class="bi bi-search" (click)="search()"></i>
         </div>
+        <!--  -->
+        <div class="spinner" *ngIf="isContentLoaded">
+            <span class="loader"></span>
+        </div>
+        <!--  -->
         <div class="empty-messege">
-            <p *ngIf="jobsCollection.length<1">No posts available please write a post</p>
+            <p *ngIf="jobsCollection.length<1 && !isContentLoaded">No posts available please write a post</p>
             <p class="error" *ngIf="errorMessege">Internal Server Error occurred. Please try after some time</p>
         </div>
         <div class="job-collection" >
