@@ -18,7 +18,11 @@
             <p class="error" *ngIf="errorMessege">Internal Server Error occurred. Please try after some time</p>
         </div>
         <div class="job-collection" >
-            <div  *ngFor="let obj of jobsCollection">
+            <div  *ngFor="let obj of jobsCollection | paginate:{
+                itemsPerPage:noPosts,
+                currentPage:page,
+                totalItems:count
+            }">
                 <!-- <div class="jobs" *ngIf="obj.role.toLowerCase().includes(searchText.toLowerCase())"> -->
                 <div class="jobs" *ngIf="obj.role.toLowerCase().includes(searchText.toLowerCase())">
                     <h3>{{obj.role }}</h3>
@@ -38,6 +42,16 @@
                     
                 </div>
             </div>
+        </div>
+        <div class="pagination">
+            <pagination-controls
+            previousLabel="Prev"
+            nextLabel="Next"
+            (pageChange)="onPostDataChange($event)"
+            
+            >
+
+            </pagination-controls>
         </div>
     </div>
 </div>

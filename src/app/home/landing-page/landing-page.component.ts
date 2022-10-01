@@ -17,6 +17,9 @@ export class LandingPageComponent implements OnInit {
   hasDeleteClicked!:boolean;
   isContentLoaded:boolean=true;
   seletedPostObj:any;
+  page:number=1;
+  count:number=0;
+  noPosts:number=6;
   
   searchText:string ="";
   constructor(private http:HttpClient,private router:Router) { }
@@ -67,9 +70,16 @@ export class LandingPageComponent implements OnInit {
     })
   }
   cancelDelete(){
-    console.log("cancel");
-    
     this.hasDeleteClicked=false;
+  }
+  onPostDataChange(event:any){
+    this.page=event;
+    this.getAllPosts()
+  }
+  onPostsSizeChange(event:any){
+    this.noPosts=event.target.value;
+    this.page=1;
+    this.getAllPosts()
   }
   
 

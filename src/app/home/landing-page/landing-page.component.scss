@@ -82,7 +82,7 @@
             }
         }
         .job-collection{
-            margin: 1em;
+            margin: 3em;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
             gap: 1em;
@@ -176,6 +176,11 @@
                 box-shadow: 0 0 10px 0 rgba(0 0 0/25%);
                 transform: translateY(-6px);
             }
+        }
+        .pagination{
+            display: flex;
+            justify-content: center;
+            margin: 2em 0;
         }
     }
 }
