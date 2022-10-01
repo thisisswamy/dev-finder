@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="writeups">
-        <p> This is one of the best platform, where you can <a routerLink="#">Find Job </a> | <a routerLink="#"> Post Job</a></p>
+        <p> This is one of the best platform, where you can <a routerLink="#">Find a Job </a> | <a routerLink="#"> Post a Job</a></p>
     </div>
 
     <div class="job-section">
@@ -22,6 +22,10 @@
                 <!-- <div class="jobs" *ngIf="obj.role.toLowerCase().includes(searchText.toLowerCase())"> -->
                 <div class="jobs" *ngIf="obj.role.toLowerCase().includes(searchText.toLowerCase())">
                     <h3>{{obj.role }}</h3>
+                    <div class="icons">
+                        <span><i class="bi bi-trash" title="Delete" (click)="deletePost(obj)"></i></span>
+                        <span><i class="bi bi-pencil-fill" title="Edit" (click)="editPost(obj)"></i></span>
+                    </div>
                     <p><small>Company : </small><span>{{obj.companyName.toUpperCase()}}</span></p>
                     <div class="skills" >
                         <small>Skills :</small>
@@ -31,8 +35,20 @@
                     <p><small>Salary : </small><span>{{obj.salary}} LPA</span></p>
                     
                     <button (click)="applyToJob(obj)">Apply</button>
+                    
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<div [ngClass]=" hasDeleteClicked ? 'delete-popup active' :'delete-popup'">
+    <div class="popup">
+        <p>Are you sure want to delete ? </p>
+        <div class="buttons">
+            <button class="yesDelete" (click)="deleteConsent()">delete</button>
+            <button class="noDelete" (click)="cancelDelete()">cancel</button>
         </div>
     </div>
 </div>

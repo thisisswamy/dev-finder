@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-landing-page',
@@ -12,10 +14,12 @@ export class LandingPageComponent implements OnInit {
   jobPostList: any[] = [];
   jobsCollection:any=[] 
   errorMessege!:boolean;
+  hasDeleteClicked!:boolean;
   isContentLoaded:boolean=true;
+  seletedPostObj:any;
   
   searchText:string ="";
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router) { }
   ngOnInit(): void {
     this.getAllPosts()
   }
@@ -28,7 +32,7 @@ export class LandingPageComponent implements OnInit {
       this.http.get(environment.apiEndPoints.getAllPost).subscribe((data:any)=>{
         this.jobPostList=data;
         this.jobsCollection=data
-        console.log(this.jobPostList);
+        this.jobsCollection.reverse()
         this.isContentLoaded=false;
         this.errorMessege=false;
         resolve(data);
@@ -44,5 +48,29 @@ export class LandingPageComponent implements OnInit {
   search(){
     this.jobsCollection=this.jobPostList.filter(t=>t.role.toLowerCase().includes(this.searchText.toLowerCase()));
   }
+  
+  deletePost(obj:any){
+    this.hasDeleteClicked=true;
+    this.seletedPostObj=obj;
+  }
+  editPost(obj:any){
+   this.router.navigate(['home/edit-post'],{ state: { pageTitle: "Edit Job Post",editObj:obj}} )
+  }
+
+  deleteConsent(){
+    return new Promise((resolve,reject)=>{
+      this.http.delete(environment.apiEndPoints.deleteJobPost+this.seletedPostObj.id).subscribe(data=>{
+        this.jobsCollection = this.jobsCollection.filter((data:any)=> data.id !=this.seletedPostObj.id);
+        this.hasDeleteClicked=false;
+        resolve(data)
+      })
+    })
+  }
+  cancelDelete(){
+    console.log("cancel");
+    
+    this.hasDeleteClicked=false;
+  }
+  
 
 }

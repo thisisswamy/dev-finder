@@ -9,6 +9,9 @@ const routes: Routes = [
   },
   {
     path:'add-post',component:JobPostComponent
+  },
+  {
+    path:'edit-post',component:JobPostComponent
   }
 ];
 

@@ -5,20 +5,20 @@
 export const environment = {
   production: false,
 
-  // apiEndPoints:{
-  //   addJobPost:"http://localhost:8080/api/jobs/add-job-post",
-  //   getAllPost:'http://localhost:8080/api/jobs/',
-  //   updateJobPost:'http://localhost:8080/api/jobs/job-post/edit/',
-  //   deleteJobPost:'http://localhost:8080/api/jobs/delete/',
-  //   searchPost:'http://localhost:8080/api/jobs/role?search=developer'
-  // }
   apiEndPoints:{
-    addJobPost:"https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/add-job-post",
-    getAllPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/',
-    updateJobPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/job-post/edit/',
-    deleteJobPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/delete/',
-    searchPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/role?search=developer'
+    addJobPost:"http://localhost:8080/api/jobs/add-job-post",
+    getAllPost:'http://localhost:8080/api/jobs/',
+    updateJobPost:'http://localhost:8080/api/jobs/job-post/edit/',
+    deleteJobPost:'http://localhost:8080/api/jobs/delete/',
+    searchPost:'http://localhost:8080/api/jobs/role?search=developer'
   }
+  // apiEndPoints:{
+  //   addJobPost:"https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/add-job-post",
+  //   getAllPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/',
+  //   updateJobPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/job-post/edit/',
+  //   deleteJobPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/delete/',
+  //   searchPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/role?search=developer'
+  // }
 };
 
 /*

@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   title:string=`{ Dev-Finder }`
   isMenuOpen!:boolean;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,9 @@ export class HeaderComponent implements OnInit {
       this.isMenuOpen=false;
     }
 
+  }
+  addPost(){
+    this.router.navigate(['home/add-post'],{ state: { pageTitle: "Add Job Post" } })
   }
 
 }
