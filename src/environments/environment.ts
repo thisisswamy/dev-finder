@@ -5,20 +5,14 @@
 export const environment = {
   production: false,
 
-  // apiEndPoints:{
-  //   addJobPost:"http://localhost:8080/api/jobs/add-job-post",
-  //   getAllPost:'http://localhost:8080/api/jobs/',
-  //   updateJobPost:'http://localhost:8080/api/jobs/job-post/edit/',
-  //   deleteJobPost:'http://localhost:8080/api/jobs/delete/',
-  //   searchPost:'http://localhost:8080/api/jobs/role?search=developer'
-  // }
   apiEndPoints:{
-    addJobPost:"https://find-dev-rest-apis-production.up.railway.app/api/jobs/add-job-post",
-    getAllPost:'https://find-dev-rest-apis-production.up.railway.app/api/jobs/',
-    updateJobPost:'https://find-dev-rest-apis-production.up.railway.app/api/jobs/job-post/edit/',
-    deleteJobPost:'https://find-dev-rest-apis-production.up.railway.app/api/jobs/delete/',
-    searchPost:'https://find-dev-rest-apis-production.up.railway.app/api/jobs/role?search=developer'
+    addJobPost:"http://localhost:8080/api/jobs/add-job-post",
+    getAllPost:'http://localhost:8080/api/jobs/',
+    updateJobPost:'http://localhost:8080/api/jobs/job-post/edit/',
+    deleteJobPost:'http://localhost:8080/api/jobs/delete/',
+    searchPost:'http://localhost:8080/api/jobs/role?search=developer'
   }
+  
 };
 
 /*
