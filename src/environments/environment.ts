@@ -6,11 +6,11 @@ export const environment = {
   production: false,
 
   apiEndPoints:{
-    addJobPost:"http://localhost:8080/api/jobs/add-job-post",
-    getAllPost:'http://localhost:8080/api/jobs/',
-    updateJobPost:'http://localhost:8080/api/jobs/job-post/edit/',
-    deleteJobPost:'http://localhost:8080/api/jobs/delete/',
-    searchPost:'http://localhost:8080/api/jobs/role?search=developer'
+    addJobPost:"http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/add-job-post",
+    getAllPost:'http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/',
+    updateJobPost:'http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/job-post/edit/',
+    deleteJobPost:'http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/delete/',
+    searchPost:'http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/role?search=developer'
   }
   
 };

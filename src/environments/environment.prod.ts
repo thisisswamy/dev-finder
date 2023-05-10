@@ -1,10 +1,10 @@
 export const environment = {
   production: true,
   apiEndPoints:{
-    addJobPost:"https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/add-job-post",
-    getAllPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/',
-    updateJobPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/job-post/edit/',
-    deleteJobPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/delete/',
-    searchPost:'https://spring-find-dev-rest-apis.herokuapp.com/api/jobs/role?search=developer'
+    addJobPost:"http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/add-job-post",
+    getAllPost:'http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/',
+    updateJobPost:'http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/job-post/edit/',
+    deleteJobPost:'http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/delete/',
+    searchPost:'http://ec2-18-212-28-49.compute-1.amazonaws.com/api/jobs/role?search=developer'
   }
 };

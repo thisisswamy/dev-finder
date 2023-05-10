@@ -14,7 +14,7 @@
         </div>
         <!--  -->
         <div class="empty-messege">
-            <p *ngIf="jobsCollection.length<1 && !isContentLoaded">No posts available please write a post</p>
+            <p *ngIf="!isContentLoaded && !errorMessege &&jobsCollection.length<1">No posts available please write a post</p>
             <p class="error" *ngIf="errorMessege">Internal Server Error occurred. Please try after some time</p>
         </div>
         <div class="job-collection" >
